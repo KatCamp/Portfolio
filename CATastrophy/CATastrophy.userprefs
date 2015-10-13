@@ -1,0 +1,16 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\spawn.cs">
+    <Files>
+      <File FileName="Assets\scripts\SideWalk.cs" Line="16" Column="10" />
+      <File FileName="Assets\scripts\Paralax.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\hit.cs" Line="52" Column="5" />
+      <File FileName="Assets\scripts\score.cs" Line="34" Column="2" />
+      <File FileName="Assets\scripts\spawn.cs" Line="56" Column="28" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
