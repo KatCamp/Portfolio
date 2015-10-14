@@ -13,7 +13,7 @@ public class SideWalk : MonoBehaviour {
 			randomSpeed = Random.Range(spawn.HumanSpeedMin, spawn.HumanSpeedMax);
 			walker = GetComponent<Rigidbody2D> ();
 			walker.velocity = new Vector2 (-randomSpeed, 0);
-			print( "min " + spawn.HumanSpeedMin);
+			// print( "min " + spawn.HumanSpeedMin);
 		}
 		
 		//cat speed
@@ -25,6 +25,11 @@ public class SideWalk : MonoBehaviour {
 
 		//taco speed
 		if (this.gameObject.tag == "taco") {
+			walker = GetComponent<Rigidbody2D> ();
+			walker.velocity = new Vector2 (-spawn.TacoSpeed, 0);
+		}
+
+		if (this.gameObject.tag == "blast") {
 			walker = GetComponent<Rigidbody2D> ();
 			walker.velocity = new Vector2 (-spawn.TacoSpeed, 0);
 		}

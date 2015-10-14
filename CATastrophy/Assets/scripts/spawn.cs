@@ -30,8 +30,8 @@ public class spawn : MonoBehaviour {
 
 		//set first speed
 			TacoSpeed = 2;
-			CatSpeedMin = 3f;
-			CatSpeedMax = 3.3f;
+			CatSpeedMin = 2.5f;
+			CatSpeedMax = 3f;
 			HumanSpeedMin = 2.3f;
 			HumanSpeedMax = 4;
 
@@ -53,10 +53,10 @@ public class spawn : MonoBehaviour {
 			if (AlreadySpedUp == false) {
 				//only call once (because its on more that one object)
 				if (gameObject.name ==  "CatSpawn"){
-					HumanSpeedMin += .15f;
-					HumanSpeedMax += .15f;
-					CatSpeedMin += .08f;
-					CatSpeedMin += .08f;
+					HumanSpeedMin += .2f;
+					HumanSpeedMax += .2f;
+					CatSpeedMin += .1f;
+					CatSpeedMin += .1f;
 					AlreadySpedUp = true;
 				}
 			}		

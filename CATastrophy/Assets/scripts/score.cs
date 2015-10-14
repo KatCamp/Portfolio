@@ -9,7 +9,7 @@ public class score : MonoBehaviour {
 	private string scores;
 	public static int points;
 	public Text scoreText;
-	private int BScore;
+	public static int BScore;
 	private string BscoreString;
 	// losing score
 	public Image hit1;
@@ -21,6 +21,7 @@ public class score : MonoBehaviour {
 	public Image end;
 	public Button replay;
 	public Button menu;
+	//public Button resetScore;
 	public Text gameO;
 	public Text EndScore;
 	public Text bestScore;
@@ -28,9 +29,13 @@ public class score : MonoBehaviour {
 	void Start () {
 		friendlyFire = 0;
 		points = 0;
+		BScore = PlayerPrefs.GetInt ("BestScore");
 	
 	}
-	
+
+
+
+
 	// Update is called once per frame
 	void Update () {
 
@@ -41,7 +46,7 @@ public class score : MonoBehaviour {
 		// turn best score to string
 		BscoreString = BScore.ToString();
 		//updating score
-		scores = points.ToString ();
+		scores = points.ToString();
 		scoreText.text = scores;
 
 		// updating losing
@@ -54,21 +59,28 @@ public class score : MonoBehaviour {
 		} else if (friendlyFire >= 3) {
 			//change texture hit 3
 			hit3.sprite = Kill;
-			//lost menu comes up
+			//end menu comes up
 			end.gameObject.SetActive(true);
 			replay.gameObject.SetActive(true);
 			menu.gameObject.SetActive(true);
 			EndScore.gameObject.SetActive(true);
 			bestScore.gameObject.SetActive(true);
 			gameO.gameObject.SetActive(true);
+		//	resetScore.gameObject.SetActive(true);
+
+			//display score
 			EndScore.text = "Score     " + scores;
 			bestScore.text = "Best Score    " + BscoreString;
 			// score goes away
 			scoreText.gameObject.SetActive(false);
 
+			if(BScore >= PlayerPrefs.GetInt ("BestScore")) {
+				PlayerPrefs.SetInt ("BestScore", BScore);
+			}
+		}
+		// set new score if score is higher
 
 
-		} 
 	}
 
 
