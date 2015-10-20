@@ -1,10 +1,12 @@
 fileFormatVersion: 2
 guid: 446043a58e92648478c6c27d00fb170c
-timeCreated: 1444183549
+timeCreated: 1445376513
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ash: {instanceID: 0}
+  - boom: {fileID: 19866170, guid: 27894d86103a34a45a609cd2ac1db21f, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -26,7 +26,7 @@ public class drawLine : MonoBehaviour {
 		lineRenderer.SetPosition (0, origin.position);
 		lineRenderer.SetPosition (1, hit.destination.position);
 		lineRenderer.SetWidth (.3f, .3f);
-		Invoke ("destroyLine", .3f);
+		Invoke ("destroyLine", .2f);
 		
 		//	dist = Vector3.Distance (origin.position, hit.destination.position);
 		
