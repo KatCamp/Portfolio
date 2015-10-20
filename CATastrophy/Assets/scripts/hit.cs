@@ -9,6 +9,7 @@ public class hit : MonoBehaviour {
 	//public int points;
 	//public GUIText scoreText;
 	public Rigidbody2D ash;
+	public static Transform destination;
 	// Use this for initialization
 	void Start () {
 		Physics2D.IgnoreLayerCollision (8, 8, true);
@@ -33,6 +34,9 @@ public class hit : MonoBehaviour {
 
 	//destoy clicked on objs
 	void OnMouseDown(){
+
+		destination = this.gameObject.transform;
+		GameObject.Find("LineRenderer").GetComponent<drawLine>().Shoot ();
 
 		// friendly fire count Taco
 		if (this.gameObject.tag == "taco") {
