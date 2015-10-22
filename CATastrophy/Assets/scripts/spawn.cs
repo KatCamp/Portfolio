@@ -18,7 +18,7 @@ public class spawn : MonoBehaviour {
 	public static float CatSpeedMax;
 	public static float TacoSpeed;
 	private float worldTime;
-	private float speedUpT = 20;
+	private float speedUpT = 15;
 	private bool AlreadySpedUp = false;
 
 
@@ -73,6 +73,9 @@ public class spawn : MonoBehaviour {
 			Spawn();
 			SetRandomTime();
 		}
+
+
+
 	}
 	
 	void Spawn (){

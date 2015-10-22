@@ -13,22 +13,30 @@ public class hit : MonoBehaviour {
 	public static Transform destination;
 	public ParticleSystem boom;
 	// Use this for initialization
+
+
 	void Start () {
 		Physics2D.IgnoreLayerCollision (8, 8, true);
 
 	}
 
-	//get rid of objects that pass cat
+
+
+	//get rid of objects that hit wall
 	void OnCollisionEnter2D(Collision2D coli) { 
 
 		if (coli.gameObject.tag == "wall") {
 			if(this.gameObject.tag == "foe"){
 				score.friendlyFire ++;
 			}
+			if(this.gameObject.tag == "bird"){
+				score.friendlyFire ++;
+			}
 			Destroy(this.gameObject);
 		}
 
 	}
+
 
 	void Update () {
 //
@@ -85,6 +93,7 @@ public class hit : MonoBehaviour {
 		destination = this.gameObject.transform;
 		GameObject.Find("LineRenderer").GetComponent<drawLine>().Shoot ();
 
+
 		// friendly fire count Taco
 		if (this.gameObject.tag == "taco") {
 			score.friendlyFire++;
@@ -94,19 +103,18 @@ public class hit : MonoBehaviour {
 			// make ash
 			Rigidbody2D instaciatedprojectile = Instantiate (ash, transform.position, transform.rotation) as Rigidbody2D;
 
-
-		//	print ("FF" + score.friendlyFire);
 		}
+
 		//friendly fire count cat
 		if (this.gameObject.tag == "cat") {
 			score.friendlyFire++;
-			Destroy (this.gameObject);
 			// make boom
 			Instantiate(boom, transform.position, transform.rotation);
 			// make ash
 			Rigidbody2D instaciatedprojectile = Instantiate (ash, transform.position, transform.rotation) as Rigidbody2D;
 			//	print ("FF" + score.friendlyFire);
 		}
+
 		// kill humans, add points
 		if (this.gameObject.tag == "foe") {
 			score.points++;
@@ -116,6 +124,15 @@ public class hit : MonoBehaviour {
 			// make ash
 			Rigidbody2D instaciatedprojectile = Instantiate (ash, transform.position, transform.rotation) as Rigidbody2D;
 		//	print ("pints =" + score.points);
+		}
+
+
+		if (this.gameObject.tag == "bird") {
+			score.points++;
+			Destroy (this.gameObject);
+			// make boom
+			Instantiate(boom, transform.position, transform.rotation);
+
 		}
 
 	}   

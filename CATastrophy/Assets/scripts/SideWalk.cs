@@ -15,6 +15,7 @@ public class SideWalk : MonoBehaviour {
 			walker.velocity = new Vector2 (-randomSpeed, 0);
 			// print( "min " + spawn.HumanSpeedMin);
 		}
+
 		
 		//cat speed
 		if (this.gameObject.tag == "cat") {
@@ -29,9 +30,18 @@ public class SideWalk : MonoBehaviour {
 			walker.velocity = new Vector2 (-spawn.TacoSpeed, 0);
 		}
 
+		// ash
 		if (this.gameObject.tag == "blast") {
 			walker = GetComponent<Rigidbody2D> ();
 			walker.velocity = new Vector2 (-spawn.TacoSpeed, 0);
+		}
+
+		//bird
+		if (this.gameObject.tag == "bird") {
+			randomSpeed = Random.Range(spawnTwo.BirdSpeedMin, spawnTwo.BirdSpeedMax);
+			walker = GetComponent<Rigidbody2D> ();
+			walker.velocity = new Vector2 (-randomSpeed, 0);
+			// print( "min " + spawn.HumanSpeedMin);
 		}
 
 	}
